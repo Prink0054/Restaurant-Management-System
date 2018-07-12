@@ -6,7 +6,6 @@ root =Tk()
 root.geometry("1600x800+0+0")
 root.title("Restaurent Management System")
 
-
 text_Input = StringVar()
 operator = ""
 
