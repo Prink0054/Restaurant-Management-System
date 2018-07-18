@@ -48,88 +48,92 @@ def btnEqualsInput():
     operator = ""
 
 
+class Methods:
 
 
-def qexit():
-    root.destroy()
+        def qexit(self):
+            root.destroy()
 
 
-def reset():
-    rand.set("")
-    Fries.set("")
-    Pizzameal.set("")
-    Burger.set("")
-    Lunchmeal.set("")
-    Subtotal.set("")
-    Total.set("")
-    Service_Charge.set("")
-    Drinks.set("")
-    Tax.set("")
-    cost.set("")
-    print("<<<<<<<<<<<<<<<<<<<<<",cost)
-    Cheese_burger.set("")
-    
+        def reset(self):
+            rand.set("")
+            Fries.set("")
+            Pizzameal.set("")
+            Burger.set("")
+            Lunchmeal.set("")
+            Subtotal.set("")
+            Total.set("")
+            Service_Charge.set("")
+            Drinks.set("")
+            Tax.set("")
+            cost.set("")
+            print("<<<<<<<<<<<<<<<<<<<<<",cost)
+            Cheese_burger.set("")
 
 
-def Ref():
 
-    x=random.randint(12980, 50876)
-    randomRef = str(x)
-    rand.set(randomRef)
-    if (Fries.get() == ""):
-         cof = "0"
-    else:
-         cof = float(Fries.get())
+        def Ref(self):
+            print("hiiiiiiiiiiiiiiiiiii")
 
-    if (Lunchmeal.get() == ""):
-        colfries = "0"
+            x=random.randint(12980, 50876)
+            randomRef = str(x)
+            rand.set(randomRef)
+            if (Fries.get() == ""):
+                 cof = "0"
+            else:
+                 cof = float(Fries.get())
 
-    else:
-        colfries = float(Lunchmeal.get())
+            if (Lunchmeal.get() == ""):
+                colfries = "0"
 
-    if (Burger.get() == ""):
+            else:
+                colfries = float(Lunchmeal.get())
 
-        cob = "0"
-    else:
-        cob = float(Burger.get())
-    if (Pizzameal.get() == ""):
-        cofi = "0"
+            if (Burger.get() == ""):
 
-    else:
-        cofi = float(Pizzameal.get())
-    if (Cheese_burger.get() == ""):
-        cochee = "0"
+                cob = "0"
+            else:
+                cob = float(Burger.get())
+            if (Pizzameal.get() == ""):
+                cofi = "0"
 
-    else:
-        cochee = float(Cheese_burger.get())
-    if (Drinks.get() == ""):
-        codr = "0"
-        
-    else:
-        codr = float(Drinks.get())
+            else:
+                cofi = float(Pizzameal.get())
+            if (Cheese_burger.get() == ""):
+                cochee = "0"
+
+            else:
+                cochee = float(Cheese_burger.get())
+            if (Drinks.get() == ""):
+                codr = "0"
+
+            else:
+                codr = float(Drinks.get())
 
 
-    costoffries = float(cof*25)
-    costoflunchmeal = float(colfries*40)
-    costofburger = float(cob*35)
-    costofpizzameal = float(cofi*50)
-    costofcheeseburger = float(cochee*50)
-    costofdrinks = float(codr*35)
+            costoffries = float(cof*25)
+            costoflunchmeal = float(colfries*40)
+            costofburger = float(cob*35)
+            costofpizzameal = float(cofi*50)
+            costofcheeseburger = float(cochee*50)
+            costofdrinks = float(codr*35)
 
-    costofmeal =  "Rs " + str('%.2f'% (costoffries +   costoflunchmeal + costofburger + costofpizzameal + costofcheeseburger + costofdrinks))
-    PayTax=((costoffries +   costoflunchmeal + costofburger + costofpizzameal +  costofcheeseburger + costofdrinks)*0.33)
-    Totalcost=(costoffries +   costoflunchmeal + costofburger + costofpizzameal  + costofcheeseburger + costofdrinks)
-    Ser_Charge=((costoffries +  costoflunchmeal + costofburger + costofpizzameal + costofcheeseburger + costofdrinks)/99)
-    Service="Rs." + str('%.2f'% Ser_Charge)
-    OverAllCost="Rs." + str( PayTax + Totalcost + Ser_Charge)
-    PaidTax="Rs." + str('%.2f'% PayTax)
+            costofmeal =  "Rs " + str('%.2f'% (costoffries +   costoflunchmeal + costofburger + costofpizzameal + costofcheeseburger + costofdrinks))
+            PayTax=((costoffries +   costoflunchmeal + costofburger + costofpizzameal +  costofcheeseburger + costofdrinks)*0.33)
+            Totalcost=(costoffries +   costoflunchmeal + costofburger + costofpizzameal  + costofcheeseburger + costofdrinks)
+            Ser_Charge=((costoffries +  costoflunchmeal + costofburger + costofpizzameal + costofcheeseburger + costofdrinks)/99)
+            Service="Rs." + str('%.2f'% Ser_Charge)
+            OverAllCost="Rs." + str( PayTax + Totalcost + Ser_Charge)
+            PaidTax="Rs." + str('%.2f'% PayTax)
 
-    Service_Charge.set(Service)
-    cost.set(costofmeal)
-    Tax.set(PaidTax)
-    Subtotal.set(costofmeal)
-    Total.set(OverAllCost)
+            Service_Charge.set(Service)
+            cost.set(costofmeal)
+            Tax.set(PaidTax)
+            Subtotal.set(costofmeal)
+            Total.set(OverAllCost)
 
+
+p1 = Methods()
 
 
 txtDisplay = Entry(f2,font =('arial',20,'bold'),textvariable = text_Input ,bd = 30,insertwidth=4,bg = "powder blue",justify = 'right')
@@ -263,15 +267,15 @@ txtTotal.grid(row=5,column=3)
 lblTotal = Label(f1,text="---------------------",fg="white")
 lblTotal.grid(row=6,columnspan=3)
 
-btnTotal=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="TOTAL", bg="powder blue",command = lambda :Ref())
+btnTotal=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="TOTAL", bg="powder blue",command = lambda :p1.Ref())
 btnTotal.grid(row=7, column=1)
 
-btnreset=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="RESET", bg="powder blue",command = lambda :reset())
+btnreset=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="RESET", bg="powder blue",command = lambda :p1.reset())
 btnreset.grid(row=7, column=3)
-btnexit=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="EXIT", bg="powder blue",command = lambda :qexit())
+btnexit=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="EXIT", bg="powder blue",command = lambda :p1.qexit())
 btnexit.grid(row=7, column=4)
 
-btnprint=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="PRINT", bg="powder blue",command = lambda :Database())
+btnprint=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="PRINT", bg="powder blue",command = lambda :Database( ))
 btnprint.grid(row=7, column=2)
 
 def price():
